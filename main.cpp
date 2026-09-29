@@ -1,4 +1,4 @@
-/ Code créé par Jayk Béland Brisson et Noah 
+/ Code créé par Jayk Béland Brisson et Noah Carriere
 
 #include <iostream>
 #include <string>
@@ -17,9 +17,6 @@ int main() {
 	std::cin >> nbr_face_d;
 	std::cout << " Nombre de faces du dé d’armure du joueur?\n";
 	std::cin >> nbr_face_a;
-
-
-    std::cout<<"Test git hub";
 
 
 
