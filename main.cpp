@@ -18,6 +18,9 @@ int main() {
 	std::cin >> nbr_face_d;
 	std::cout << " Nombre de faces du dé d’armure du joueur?\n";
 	std::cin >> nbr_face_a;
+	int test = generer(5);
+	std::cout << test;
+
 
 
 
