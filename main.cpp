@@ -6,24 +6,48 @@
 
 int main() {
 
-	int nbr_dee;
-	int nbr_face_d;
-	int nbr_face_a;
+	// Initialiser les parametres des monstres
+	int nbr_mstr = 0;
+	std::string nom_mstr;
+	int nbr_c_mstr;
+	int frc_mstr;
+	int rst_mstr;
 
-// Input
+	// Generer un numero qui est associe a un monstre.
+	nbr_mstr = generer(4);
+	if (nbr_mstr == 1)
+	{
+		nom_mstr = "Bete";
+		nbr_c_mstr = 5;
+		frc_mstr = 2;
+		rst_mstr = 3;
+	}
+	else if (nbr_mstr == 2)
+	{
+		nom_mstr = "Dragon";
+		nbr_c_mstr = 9;
+		frc_mstr = 4;
+		rst_mstr = 8;
+	}
+	else if (nbr_mstr == 3)
+	{
+		nom_mstr = "Geant";
+		nbr_c_mstr = 11;
+		frc_mstr = 6;
+		rst_mstr = 12;
+	}
+	else if (nbr_mstr == 4)
+	{
+		nom_mstr = "Mort Vivant";
+		nbr_c_mstr = 3;
+		frc_mstr = 15;
+		rst_mstr = 2;
+	}
 
-	std::cout << "Nombre de des de dommages fait par le joueur?\n";
-	std::cin >> nbr_dee;
-	std::cout << " Nombre de faces des dés de dommages du joueur?\n";
-	std::cin >> nbr_face_d;
-	std::cout << " Nombre de faces du dé d’armure du joueur?\n";
-	std::cin >> nbr_face_a;
-	int test = generer(5);
-	std::cout << test;
-
-
-
-
+	std::cout << nom_mstr << "\n";
+	std::cout << nbr_c_mstr << "\n";
+	std::cout << frc_mstr << "\n";
+	std::cout << rst_mstr << "\n";
 
 	return 0;
 }
