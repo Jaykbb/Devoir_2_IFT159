@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "generer.h"
 
 int main() {
 
