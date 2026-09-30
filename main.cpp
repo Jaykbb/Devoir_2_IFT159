@@ -1,4 +1,4 @@
-/ Code créé par Jayk Béland Brisson et Noah Carriere
+// Code créé par Jayk Béland Brisson et Noah Carriere
 
 #include <iostream>
 #include <string>
