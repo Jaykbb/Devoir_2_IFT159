@@ -9,10 +9,18 @@ int main() {
 	// Initialiser les parametres des monstres
 	int nbr_mstr = 0;
 	std::string nom_mstr;
-	int nbr_c_mstr;
-	int frc_mstr;
-	int rst_mstr;
+	int nbr_c_mstr = 0;
+	int frc_mstr = 0;
+	int rst_mstr = 0;
 
+	int pts_vie_mstr = 100;
+	int pts_vie_per = 100;
+
+	int nbr_dee;
+	int nbr_face_d;
+	int nbr_face_a;
+
+	int compteur = 1;
 	// Generer un numero qui est associe a un monstre.
 	nbr_mstr = generer(4);
 	if (nbr_mstr == 1)
@@ -44,10 +52,71 @@ int main() {
 		rst_mstr = 2;
 	}
 
-	std::cout << nom_mstr << "\n";
-	std::cout << nbr_c_mstr << "\n";
-	std::cout << frc_mstr << "\n";
-	std::cout << rst_mstr << "\n";
+	std::cout << "Nombre de des de dommages fait par le joueur?\n";
+	std::cin >> nbr_dee;
+	std::cout << " Nombre de faces des dés de dommages du joueur?\n";
+	std::cin >> nbr_face_d;
+	std::cout << " Nombre de faces du dé d’armure du joueur?\n";
+	std::cin >> nbr_face_a;
+
+	std::cout << "Vous affronter le " << nom_mstr << "\n";
+
+	do 
+	{
+		std::cout << "Round: " << compteur <<"\n";
+		int degats_pers = 0;
+		int armure_pers = generer(nbr_face_a);
+		for (int i = 0; i <= nbr_dee; i++)
+		{
+			degats_pers += generer(nbr_face_d);
+		}
+
+		int armure_mstr = generer(rst_mstr);
+		int degats_mstr = 0;
+		for (int i = 0; i <= nbr_c_mstr; i++)
+		{
+			degats_mstr += generer(frc_mstr);
+		}
+
+		int degat_tot_pers = degats_pers - armure_mstr;
+		int degat_tot_mstr = degats_mstr - armure_pers;
+
+		if (degat_tot_pers < 0 )
+		{
+			pts_vie_mstr = pts_vie_mstr;
+		}
+		else
+		{
+			pts_vie_mstr = pts_vie_mstr - degat_tot_pers;
+		}
+
+		if (degat_tot_mstr < 0)
+		{
+			pts_vie_per = pts_vie_per;
+		}
+		else
+		{
+			pts_vie_per = pts_vie_per - degat_tot_mstr;
+		}
+
+		if (pts_vie_mstr < 0)
+		{
+			pts_vie_mstr = 0;
+		}
+
+		if (pts_vie_per < 0)
+		{
+			pts_vie_per = 0;
+		}
+
+		std::cout << "Points de vie personnage: " << pts_vie_per << "\n";
+		std::cout << "Points de vie monstre: " << pts_vie_mstr << "\n";
+		
+		compteur += 1;
+
+	} while (pts_vie_mstr > 0 && pts_vie_per > 0);
+
+	std::cout << "Rondes totale: " << compteur;
 
 	return 0;
 }
