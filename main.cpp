@@ -52,20 +52,21 @@ int main() {
 		rst_mstr = 2;
 	}
 
-	std::cout << "Nombre de des de dommages fait par le joueur?\n";
+	std::cout << "Nombre de coups fait par le joueur?\n";
 	std::cin >> nbr_dee;
-	std::cout << " Nombre de faces des dés de dommages du joueur?\n";
+	std::cout << "Quantite de dommages maximale du joueur?\n";
 	std::cin >> nbr_face_d;
-	std::cout << " Nombre de faces du dé d’armure du joueur?\n";
+	std::cout << "Quantite de resistance maximale du joueur?\n";
 	std::cin >> nbr_face_a;
 
 	std::cout << "Vous affronter le " << nom_mstr << "\n";
+	std::cout << "\n";
 
 	do 
 	{
-		std::cout << "Round: " << compteur <<"\n";
 		int degats_pers = 0;
 		int armure_pers = generer(nbr_face_a);
+
 		for (int i = 0; i <= nbr_dee; i++)
 		{
 			degats_pers += generer(nbr_face_d);
@@ -73,6 +74,7 @@ int main() {
 
 		int armure_mstr = generer(rst_mstr);
 		int degats_mstr = 0;
+
 		for (int i = 0; i <= nbr_c_mstr; i++)
 		{
 			degats_mstr += generer(frc_mstr);
@@ -111,12 +113,13 @@ int main() {
 
 		std::cout << "Points de vie personnage: " << pts_vie_per << "\n";
 		std::cout << "Points de vie monstre: " << pts_vie_mstr << "\n";
+		std::cout << "\n";
 		
 		compteur += 1;
 
 	} while (pts_vie_mstr > 0 && pts_vie_per > 0);
 
-	std::cout << "Rondes totale: " << compteur;
+	std::cout << "Nombre totale de tours: " << compteur;
 
 	return 0;
 }
