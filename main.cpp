@@ -64,6 +64,10 @@ int main() {
 		rst_mstr = 2;
 	}
 
+	// Mettre a l'ecran le monstre choisi
+	std::cout << "Vous affronter le " << nom_mstr << "\n";
+	std::cout << "\n";
+
 	// Demande a l'utilisateur de entrer les valeurs du personnage
 	std::cout << "Nombre de coups fait par le joueur?\n";
 	std::cin >> nbr_dee;
@@ -71,12 +75,7 @@ int main() {
 	std::cin >> nbr_face_d;
 	std::cout << "Quantite de resistance maximale du joueur?\n";
 	std::cin >> nbr_face_a;
-
-	// Mettre a l'ecran le monstre choisi
-	std::cout << "Vous affronter le " << nom_mstr << "\n";
-	std::cout << "\n";
 	
-
 	// La boucle qui calcule les nouveaux points de vie apres chaque tours.
 	do 
 	{
